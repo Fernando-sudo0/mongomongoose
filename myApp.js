@@ -18,7 +18,14 @@ const config = {
 
 
 const createAndSavePerson = (done) => {
-  done(null /*, data*/);
+const person1 = new Person({name : 'Ricky', age : 74, favoriteFoods  : [ "Empanadas", "Pozole", "French fries"]});
+
+person1.save(function(err, data){
+  if(err) return console.error(err);
+  done(null , data);
+  
+});
+
 };
 
 const createManyPeople = (arrayOfPeople, done) => {
